@@ -15,7 +15,7 @@ function EditHouse() {
   // Fetch house data
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/houses")
+      .get("https://house-rent-app.onrender.com/api/houses")
       .then((res) => {
         const house = res.data.houses.find((h) => h._id === id);
         if (house) {
@@ -40,7 +40,7 @@ function EditHouse() {
     e.preventDefault();
 
     try {
-      await axios.put(`http://localhost:5000/api/houses/${id}`, form);
+      await axios.put(`https://house-rent-app.onrender.com/api/houses/${id}`, form);
       alert("House updated successfully!");
       navigate("/");
     } catch (error) {
